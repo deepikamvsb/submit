@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .btn {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        .message {
+            margin-top: 15px;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="button" class="btn" onclick="register()">Register</button>
+        </form>
+        <div id="successMessage" class="message"></div>
+    </div>
+
+    <script>
+        function register() {
+            // Prevent the form from submitting in the traditional way
+            event.preventDefault();
+            
+            // Display a success message
+            document.getElementById('successMessage').textContent = 'Your registration is successful!';
+            
+            // Optionally, clear the form fields
+            document.getElementById('registrationForm').reset();
+        }
+    </script>
+</body>
+</html>
