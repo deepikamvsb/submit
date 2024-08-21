@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form action="success.html" method="get">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required><br><br>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contact" name="contact" required><br><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea><br><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Success</title>
+</head>
+<body>
+    <h1>Registration Success</h1>
+    <p>Your registration was successful!</p>
+
+    <script>
+        // Function to get query parameters from the URL
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            const result = {};
+            for (const [key, value] of params) {
+                result[key] = value;
+            }
+            return result;
+        }
+
+        // Display the query parameters (optional)
+        const params = getQueryParams();
+        if (Object.keys(params).length > 0) {
+            const info = `
+                <p><strong>First Name:</strong> ${params.firstname}</p>
+                <p><strong>Last Name:</strong> ${params.lastname}</p>
+                <p><strong>Email:</strong> ${params.email}</p>
+                <p><strong>Contact Number:</strong> ${params.contact}</p>
+                <p><strong>Address:</strong> ${params.address}</p>
+                <p><strong>City:</strong> ${params.city}</p>
+            `;
+            document.body.insertAdjacentHTML('beforeend', info);
+        }
+    </script>
+</body>
+</html>
